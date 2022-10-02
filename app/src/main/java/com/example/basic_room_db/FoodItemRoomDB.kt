@@ -8,7 +8,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [FoodItem::class], version = 1, exportSchema = false)
+@Database(entities = [FoodItem::class], version = 1, exportSchema = false)      // version and exportSchema are mainly used when we have to make Database Migrations, that's why exportSchemais set to false here.
+
 public abstract class FoodItemRoomDB:RoomDatabase() {
 
     abstract fun foodItemDao(): FoodItemDao

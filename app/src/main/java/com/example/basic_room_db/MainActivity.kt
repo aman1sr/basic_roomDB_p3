@@ -16,14 +16,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+//        val foodItem = FoodItem("Tarbuj", 140f)
+//
+//        foodItemViewModel.insert(foodItem)
+
         foodItemViewModel.allFoodItems.observe(this, {
             foodItemList ->
             foodItemList?.let {
-                var foodItems = foodItemList
+//                var foodItems = foodItemList
 
                 var msg = ""
 
-                for (foodItem in foodItems) {
+                for (foodItem in foodItemList) {
                     msg += foodItem.toString() + "\n\n"
                 }
 
@@ -32,9 +37,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-//        val foodItem = FoodItem("Apple", 140f)
-//
-//        foodItemViewModel.insert(foodItem)
+
 
 
 

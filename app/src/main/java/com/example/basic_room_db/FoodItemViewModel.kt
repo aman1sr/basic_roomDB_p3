@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
+/* The ViewModel is responsible to provide data to the UI  */
 class FoodItemViewModel(private val foodItemRepository: FoodItemRepository) : ViewModel() {
 
     val allFoodItems : LiveData<MutableList<FoodItem>> = foodItemRepository.alFoodItems.asLiveData()
@@ -15,9 +16,9 @@ class FoodItemViewModel(private val foodItemRepository: FoodItemRepository) : Vi
         foodItemRepository.insert(foodItem)
     }
 
-    fun delete(foodItem: FoodItem) = viewModelScope.launch {
-        foodItemRepository.delete(foodItem)
-    }
+//    fun delete(foodItem: FoodItem) = viewModelScope.launch {
+//        foodItemRepository.delete(foodItem)
+//    }
 
     class FoodItemViewModelFactory(private val foodItemRepository: FoodItemRepository)
         :ViewModelProvider.Factory{
